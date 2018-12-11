@@ -1,21 +1,29 @@
+<div class="row" style="padding-top: 10%">
+<div class="col"></div>
+<div class="col-md-10">
+
 <h1>Edit an Article!</h1>
 
 <%= form_for @article  do |f| %>
 
 <p>
 	<%= f.label :title %><br>
-	<%= f.text_field :title %>
+	<%= f.text_field :title,class: "form-control" %>
 </p>
 <p>
 	<%= f.label :text %><br>
-	<%= f.text_area :text %>
+	<%= f.text_area :text, class: "form-control" %>
 </p>
 <p>
-	<%= f.submit %>
+	<%= f.submit  class: "btn btn-success btn-md"%>
 </p>
 <p>
-	<%= link_to 'Back', articles_path %> |
-	<%= link_to "Home", root_path %>
+	<%= link_to 'Back', articles_path, class: "btn btn-info btn-md"%> 
+	<%= link_to "Home", root_path, class: "btn btn-primary btn-md" %>
 </p>
 
 <% end %>
+
+</div><!-- .col-md-10 -->
+<div class="col"></div>
+</div><!-- row -->
