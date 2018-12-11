@@ -3,11 +3,33 @@
 @import "bootstrap";
 @import "welcome";
 @import "navigation";
+@import "footer";
 
 body {
-	min-height: 75rem;
+	min-height: 42rem;
 	padding-top: 4.5rem;
 	background-color: #ffddee;
+	overflow-x: hidden; 
+}
+
+.white {
+	color: #ffffff;
+}
+
+.grey {
+	color: #ddcccc;
+}
+
+.small-font {
+	font-size: 11px;
+}
+
+.linktxt {
+	color: #deddee;
+}
+
+.linktxt:hover {
+	color: #ffffff;
 }
 
 .container {
