@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
+  #get 'sessions/new'
+  
   resources :users
+  
   resources :articles do
   	resources :comments
   	collection do
@@ -9,6 +12,8 @@ Rails.application.routes.draw do
   end
 
   resources :subscribers
+
+  resources :sessions
 
   root 'welcome#index'
 end

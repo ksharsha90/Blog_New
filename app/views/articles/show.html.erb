@@ -17,9 +17,14 @@
 </p>
 
 <%= render 'comments/comment' %>
+
+<% if current_user %>
 <hr>
 <%= render 'comments/form' %>
+<% else %>
+Please <%= link_to 'Sign In', new_session_path %> or <%= link_to 'Sign Up', new_user_path %> to create a comment
 
+<% end %>
 <p>
 	<%= link_to 'Back', articles_path, class: "btn btn-info btn-sm" %>
 	<%= link_to "Home", root_path, class: "btn btn-primary btn-sm" %>

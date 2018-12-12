@@ -8,7 +8,7 @@
 			<% if @user.errors.any? %>
 				<div id="error-explanation">
 					<h2>
-						<%= pluralize(@users.errors.count, "errors") %>
+						<%= pluralize(@user.errors.count, "errors") %>
 								Prohinibited this article from being saved:
 					</h2>
 					<p>
