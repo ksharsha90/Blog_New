@@ -1,0 +1,44 @@
+
+<div class="row">
+<div class="col"></div>
+<div class="col-md-10">
+<h1>Listing all the Subscribers</h1>
+
+<table class="table table-hover table-striped table-responsive-xs table-danger">
+	<thead>
+		<tr>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Email Address</th>
+		<th>District</th>
+		</tr>
+	</thead>
+<% @subscribers.each do |subscriber| %>
+ <tr>
+ 	<td> 
+ 		<%= subscriber.f_name %> 		
+ 	</td>
+ 	<td> 
+ 		<%= subscriber.l_name %>
+ 	</td>
+ 	<td> 
+ 		<%= subscriber.email %>
+ 	</td>
+ 	<td> 
+ 		<%= subscriber.district %>
+ 	</td>
+ 	 
+ 	<td> 
+ 		<%= link_to 'Delete', subscriber_path(subscriber),
+ 							  method: :delete, data: {confirm: "Are you certain!?"}, class: "btn btn-sm btn-danger" %> 
+ 	</td>
+ </tr>	
+<% end %>
+</table>
+
+<p>
+	<%= link_to "Home", root_path, class: "btn btn-sm btn-primary" %>
+</p>
+</div><!-- .col-md-10 -->
+<div class="col"></div>
+</div><!-- row -->

@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   	end
   end
 
+  resources :subscribers
+
   root 'welcome#index'
 end
