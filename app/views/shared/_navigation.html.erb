@@ -6,11 +6,11 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%= link_to "Home", root_path, class: "nav-link" %>
+      <li class="nav-item"> <!-- Four arguments:- nav_link,action(which is index),url and style -->
+        <%= active_link_to 'Home', 'welcome', 'index',  root_path,  "active_nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to 'Blog', articles_path, class: "nav-link" %>
+        <%= active_link_to 'Blog', 'articles', 'index', articles_path,  "active_nav-link" %>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About</a>

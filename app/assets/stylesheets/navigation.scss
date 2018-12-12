@@ -6,9 +6,21 @@
 
 }
 
+#active_nav-link {
+	color: #ffffff !important;
+	display: block;
+	padding: 0.5rem 1rem;
+}
+
+.active_nav-link {
+	color: #f3cace !important;
+	display: block;
+	padding: 0.5rem 1rem;
+}
+
 .nav-item a {
 	font-weight: bold;
-	color: #f3cace;
+	color: #f3cace !important;
 }
 
 .nav-item a:hover {
