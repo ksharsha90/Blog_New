@@ -8,7 +8,7 @@
 <div class="field" style="100%;">
 
 <!--Checking for Errors!! -->
-
+<div class="field" style="100%;">
 <% if @article.errors.any? %>
 	<div id="error_explanation">
 		<h2>
@@ -21,13 +21,16 @@
 					<li> 
 						<%= msg %>
 					</li>
-				<% end %>
 			</ul>
+			<% end %>
 		</p>
+			<% if alert %>
+				<%= alert %>
+			<% end %>
 	</div>
 </div>
 <% end %>
-
+</div>
 
 
 <p>
