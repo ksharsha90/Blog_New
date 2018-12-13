@@ -4,12 +4,18 @@
 <h1>List of Articles matching your search word</h1>
 
 <table class="table table-hover table-striped table-responsive-xs table-danger">
+	<thead>
 	<tr>
 	<th>Title</th>
 	<th>Text</th>
+<% if current_user && current_user.admin? %>
 	<th colspan="3">Editing options</th>
-	</tr>
+<% else %>
+	<th colspan="1">Show Articles</th>
 
+<% end %>
+	</tr>
+	</thead>
 <% @articles.each do |article| %>
  <tr>
  	<td> 
@@ -21,6 +27,8 @@
  	<td> 
  		<%= link_to 'Show', article_path(article), class: "btn btn-info btn-sm" %> 
  	</td>
+ 	<% if current_user && current_user.admin? %>
+
  	<td> 
  		<%= link_to 'Edit', edit_article_path(article), class: "btn btn-sm btn-warning" %> 
  	</td> 
@@ -28,6 +36,7 @@
  		<%= link_to 'Delete', article_path(article),
  							  method: :delete, data: {confirm: "Are you certain!?"}, class: "btn btn-sm btn-danger" %> 
  	</td>
+ 	<% end %>
  </tr>	
 <% end %>
 </table>

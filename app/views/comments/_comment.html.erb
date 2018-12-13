@@ -12,10 +12,14 @@
 	<strong>Comment</strong>
 	<%= truncate(comment.body, length: 300) %>
 </p>
+
+<% if current_user && current_user.admin? %>
 <p>
 	<%= link_to "Delete comment", [comment.article,comment], 
 								   class: "btn btn-danger btn-md",
 								   method: :delete,
 								   data: {confirm: "Are you sure?"} %>
 </p>
+<% end %>
+
 <% end %> 

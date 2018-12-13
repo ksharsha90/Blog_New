@@ -4,5 +4,6 @@ class User < ApplicationRecord
 
 #Need to create SESSIONS for active users and terminate on signout!
 
+#Need to create ADMIN user - and restrict areas to only the ADMIN
 
 end

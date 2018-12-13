@@ -14,25 +14,33 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">About</a>
+      </li>    
+
+      <% if current_user && current_user.admin %>
+      <li class="nav-item">
+       <%= active_link_to 'Subscribers', 'subscribers', 'index', subscribers_path, 'active_nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Sign out", session_path('active'), method: :delete, class: "active_nav-link" %>
+      </li>
+      <li class="nav-item">
+        Hi, Admin! <%= current_user.userid %>
+      </li>
+      <% elsif current_user %>          
+      <li class="nav-item">
+       <%= link_to "Sign out", session_path('active'), method: :delete, class: "active_nav-link" %>
+      </li>
+      <li class="nav-item">
+        Hi  <%= current_user.userid %>
+      </li>  
+      <% else %>
+      <li class="nav-item">
+        <%= link_to "Sign In", new_session_path, class: "active_nav-link" %>
       </li>
       <li class="nav-item">
         <%= link_to "Create Account", new_user_path, class: "active_nav-link" %>
       </li>
-
-        <% if current_user %>
-        <li class="nav-item">
-          <%= link_to "Sign out", session_path('active'), method: :delete, class: "active_nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          Hi, <%= current_user.userid %>
-        </li>
-          <% else %>
-          <li class="nav-item">
-             <%= link_to "Sign In", new_session_path, class: "active_nav-link" %>
-          </li>
-        <% end %>
-      
+      <% end %>
     </ul>
     <div class="form-inline my-2 my-lg-0">
     <%= form_tag search_articles_path, method: :get do %>
