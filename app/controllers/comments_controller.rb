@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
 	def create
 		@article = Article.find(params[:article_id])
 		@comment = @article.comments.create(comment_params)
-		if comment.save
+		if @comment.save
 			redirect_to article_path(@article), notice: "Succesfully created a comment."
 		else
 			redirect_to article_path(@article), alert: "Comment could not be created!"
